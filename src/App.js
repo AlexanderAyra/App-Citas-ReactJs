@@ -14,6 +14,10 @@ function App() {
 		setCitax(nuevasCitas)
 	}
 
+	// Mensaje Condicional
+
+	const Titulo = citax.length === 0 ? 'No hay Citas' : 'Administrar tus Citas'
+
 	return (
 		<div>
 			<h1>Administrador de Pacientes</h1>
@@ -23,7 +27,7 @@ function App() {
 						<Formulario addCita={addCita} />
 					</div>
 					<div className='one-half column'>
-						<h2>Administra tus Citas</h2>
+						<h2>{Titulo}</h2>
 						{citax.map((cita) => (
 							<Cita key={cita.id} cita={cita} deleteCitas={deleteCitas} />
 						))}
