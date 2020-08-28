@@ -9,6 +9,11 @@ function App() {
 		setCitax([...citax, cita])
 	}
 
+	const deleteCitas = (id) => {
+		const nuevasCitas = citax.filter((cit) => cit.id !== id)
+		setCitax(nuevasCitas)
+	}
+
 	return (
 		<div>
 			<h1>Administrador de Pacientes</h1>
@@ -20,7 +25,7 @@ function App() {
 					<div className='one-half column'>
 						<h2>Administra tus Citas</h2>
 						{citax.map((cita) => (
-							<Cita key={cita.id} cita={cita} />
+							<Cita key={cita.id} cita={cita} deleteCitas={deleteCitas} />
 						))}
 					</div>
 				</div>
