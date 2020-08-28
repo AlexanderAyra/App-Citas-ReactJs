@@ -3,10 +3,21 @@ import Formulario from './components/Formulario'
 import Cita from './components/Cita'
 
 function App() {
-	const [citax, setCitax] = useState([])
+	// Citas en local Storage
+
+	let citaInical = JSON.parse(localStorage.getItem('citas'))
+	if (!citaInical) {
+		citaInical = []
+	}
+
+	const [citax, setCitax] = useState(citaInical)
 
 	useEffect(() => {
-		console.log('listo')
+		if (citaInical) {
+			localStorage.setItem('citas', JSON.stringify(citax))
+		} else {
+			localStorage.setItem('citas', JSON.stringify([]))
+		}
 	}, [citax])
 
 	const addCita = (cita) => {
