@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { getId } from '../utils'
 
 const Formulario = () => {
 	const [citas, setCitas] = useState({
@@ -35,10 +36,11 @@ const Formulario = () => {
 			return
 		}
 
-		console.log(mascota)
+		setError(false)
 
 		// Asignar id
-
+		citas.id = getId()
+		console.log(citas)
 		// crear la cita
 
 		// reiniciar el form
