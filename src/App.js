@@ -1,9 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Formulario from './components/Formulario'
 import Cita from './components/Cita'
 
 function App() {
 	const [citax, setCitax] = useState([])
+
+	useEffect(() => {
+		console.log('listo')
+	}, [citax])
 
 	const addCita = (cita) => {
 		setCitax([...citax, cita])
