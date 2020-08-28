@@ -9,11 +9,14 @@ const Formulario = () => {
 		sintomas: '',
 	})
 
-	const { mascota, propietario, fecha, hora, sintomas } = citas
-
 	const handleChange = (e) => {
-		setCitas()
+		setCitas({
+			...citas,
+			[e.target.name]: e.target.value,
+		})
 	}
+
+	const { mascota, propietario, fecha, hora, sintomas } = citas
 
 	return (
 		<div>
@@ -27,6 +30,7 @@ const Formulario = () => {
 					className='u-full-width'
 					placeholder='Nombre Mascota'
 					onChange={handleChange}
+					value={mascota}
 				/>
 
 				<label>Nombre Dueño</label>
@@ -36,6 +40,7 @@ const Formulario = () => {
 					className='u-full-width'
 					placeholder='Nombre Dueño'
 					onChange={handleChange}
+					value={propietario}
 				/>
 
 				<label>Fecha</label>
@@ -44,6 +49,7 @@ const Formulario = () => {
 					name='fecha'
 					className='u-full-width'
 					onChange={handleChange}
+					value={fecha}
 				/>
 
 				<label>Hora</label>
@@ -52,6 +58,7 @@ const Formulario = () => {
 					name='hora'
 					className='u-full-width'
 					onChange={handleChange}
+					value={hora}
 				/>
 
 				<label>Síntomas</label>
@@ -59,6 +66,7 @@ const Formulario = () => {
 					name='sintomas'
 					className='u-full-width'
 					onChange={handleChange}
+					value={sintomas}
 				></textarea>
 
 				<button className='u-full-width button-primary'>Agregar</button>
