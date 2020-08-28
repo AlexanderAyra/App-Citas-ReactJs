@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Formulario from './components/Formulario'
+import Cita from './components/Cita'
 
 function App() {
 	const [citax, setCitax] = useState([])
@@ -16,7 +17,12 @@ function App() {
 					<div className='one-half column'>
 						<Formulario addCita={addCita} />
 					</div>
-					<div className='one-half column'>2</div>
+					<div className='one-half column'>
+						<h2>Administra tus Citas</h2>
+						{citax.map((cita) => (
+							<Cita key={cita.id} cita={cita} />
+						))}
+					</div>
 				</div>
 			</div>
 		</div>
