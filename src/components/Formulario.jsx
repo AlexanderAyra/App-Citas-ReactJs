@@ -18,11 +18,23 @@ const Formulario = () => {
 
 	const { mascota, propietario, fecha, hora, sintomas } = citas
 
+	const handleSubmit = (e) => {
+		e.preventDefault()
+
+		// validar
+
+		// Asignar id
+
+		// crear la cita
+
+		// reiniciar el form
+	}
+
 	return (
 		<div>
 			<h2>Crear Cita</h2>
 
-			<form>
+			<form onSubmit={handleSubmit}>
 				<label>Nombre Mascota</label>
 				<input
 					type='text'
