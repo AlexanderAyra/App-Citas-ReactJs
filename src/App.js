@@ -18,7 +18,7 @@ function App() {
 		} else {
 			localStorage.setItem('citas', JSON.stringify([]))
 		}
-	}, [citax])
+	}, [citax, citaInical])
 
 	const addCita = (cita) => {
 		setCitax([...citax, cita])
