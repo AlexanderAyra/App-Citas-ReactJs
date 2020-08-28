@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { getId } from '../utils'
 
-const Formulario = () => {
+const Formulario = ({ addCita }) => {
 	const [citas, setCitas] = useState({
 		mascota: '',
 		propietario: '',
@@ -40,9 +40,8 @@ const Formulario = () => {
 
 		// Asignar id
 		citas.id = getId()
-		console.log(citas)
 		// crear la cita
-
+		addCita(citas)
 		// reiniciar el form
 	}
 
